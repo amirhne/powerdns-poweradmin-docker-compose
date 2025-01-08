@@ -46,7 +46,7 @@ Follow the instructions to set up the **PowerAdmin** interface and connect it to
 
 After completing the setup wizard:
 
-- **Modify the `www` directory** for any custom changes you want in the PowerAdmin interface.
+- **Modify the `www` directory** for any custom changes that Poweradmin whats you to apply.
 - **Import the PowerDNS SQL schema** into the MySQL container to ensure everything works properly.
 
 ```
