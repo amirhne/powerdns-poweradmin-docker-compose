@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: pdns-mysql
+    hostname: pdns-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secure-db-pass'
+      MYSQL_DATABASE: pdns
+      MYSQL_ROOT_HOST: '%'                 
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - pdns_network
+  auth:
+    image: powerdns/pdns-auth-49
+    container_name: pdns-auth
+    depends_on:
+      - mysql
+    restart: always
+    volumes:
+      - ./auth/pdns.conf:/etc/powerdns/pdns.conf
+    networks:
+      pdns_network:
+        ipv4_address: 172.28.0.4
+
+  poweradmin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: poweradmin
+    depends_on:
+      - mysql
+      - auth
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./poweradmin/www:/var/www/html
+      - ./poweradmin/ssl:/etc/ssl/poweradmin
+      - ./poweradmin/apache2/sites-available:/etc/apache2/sites-available
+      - ./poweradmin/apache2/sites-enabled:/etc/apache2/sites-enabled
+    networks:
+      - pdns_network
+  recursor:
+    image: powerdns/pdns-recursor-53
+    container_name: pdns-recursor
+    restart: always
+    depends_on:
+      - auth
+    volumes:
+      - ./recursor/recursor.conf:/etc/powerdns/recursor.conf
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    networks:
+      - pdns_network
+
+networks:
+  pdns_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+          gateway: 172.28.0.1
