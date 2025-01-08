@@ -8,4 +8,4 @@ I utilized this project to recruse to multiple master zones in Active Directory,
 
 The project involves four container instances, which include PowerDNS Recursor, PowerDNS Authoritative Server, the PowerAdmin PHP web GUI, and MySQL. A custom network was created for the setup, with only the PowerDNS Recursor and PowerAdmin GUI exposed externally. The remaining services, including the authoritative PowerDNS server and MySQL, are kept internal for security and performance reasons.
 
-A custom Dockerfile was created specifically for the PowerAdmin instance. This [Poweradmin](https://github.com/poweradmin/poweradmin) must be cloned into the `www` folder of the project directory to ensure proper configuration and functionality.
+A custom Dockerfile was created specifically for the PowerAdmin instance. This [Poweradmin](https://github.com/poweradmin/poweradmin) must be cloned into new folder at `poweradmin/www` folder of the project directory to ensure proper configuration and functionality.
