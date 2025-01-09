@@ -47,7 +47,7 @@ Follow the instructions to set up the PowerAdmin interface and connect it to you
 After completing the setup wizard:
 
 - **Modify the `www` directory** for any custom changes that Poweradmin whats you to apply.
-- **Import the PowerDNS SQL schema** into the MySQL container to ensure everything works properly.
+- **Import the PowerDNS MySQL schema** into the MySQL container to ensure everything works properly.
 
 ```
 docker exec -i pdns-mysql mysql -u root -p < /path/to/powerdns-schema.sql
