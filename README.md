@@ -30,6 +30,7 @@ You can find the configuration file here:
 
 Once everything is configured, use Docker Compose to bring up the services. The `-d` flag runs the containers in the background.
 ```
+cd powerdns-poweradmin-docker-compose/
 docker compose up -d
 ```
 After the containers start, you can access **PowerAdmin** via the following URLs:
