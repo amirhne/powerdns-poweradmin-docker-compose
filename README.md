@@ -3,6 +3,7 @@
 This project was driven by my personal enthusiasm to implement PowerDNS as the backbone DNS server in my production infrastructure. The environment included multiple Windows Server DNS servers as well as several BIND servers.
 
 I utilized this project to manage multiple master zones in Active Directory, while also configuring PowerDNS to act as the authoritative master for other zones. The integration of PowerDNS allowed for centralized and efficient DNS management across diverse platforms.
+![https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/powerdns-poweradmin-docker-compose.png]()
 
 ## How it works?
 
