@@ -53,4 +53,4 @@ After completing the setup wizard:
 docker exec -i pdns-mysql mysql -u root -p < /path/to/powerdns-schema.sql
 ```
 
-Finally, to secure PowerDNS, I recommend allowing only TCP/UDP port 53 to the node and restricting access to TCP ports 80/443 to authorized devices only. Additionally, I suggest using a separate SQL user with full access to the PowerDNS database in the pdns.conf file.
+Finally, to secure PowerDNS, I recommend allowing only TCP/UDP port 53 to the node and restricting access to TCP ports 80/443 to authorized devices only. Additionally, I suggest using a separate SQL user with full access to the PowerDNS database in the [pdns.conf](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/auth/pdns.conf) file.
