@@ -21,9 +21,9 @@ Next, create the necessary directory for **PowerAdmin** inside the cloned reposi
 mkdir powerdns-poweradmin-docker-compose/poweradmin/www
 git clone https://github.com/poweradmin/poweradmin.git powerdns-poweradmin-docker-compose/poweradmin/www
 ```
-If you have your own **SSL certificate** for the PowerAdmin interface, place it in the `ssl` directory inside `powerdns-poweradmin-docker-compose/poweradmin/ssl`
+If you have your own **SSL certificate** for the PowerAdmin interface, place public and private key with the same name in the `ssl` directory inside `powerdns-poweradmin-docker-compose/poweradmin/ssl`
 
-Now, customize the `recursor.conf` file to suit your zone configuration. However, **do not change the IP address** `172.28.0.4` as it is required for forwarding request to master zone of PowerDNS.
+Now, customize the `recursor.conf` file to suit your zone configuration. However, **do not change the IP address** `172.28.0.4` for master zones in Authoritative Server as it is required for forwarding request to master zone of PowerDNS.
 
 You can find the configuration file here:
 [recursor.conf](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/recursor/recursor.conf).
