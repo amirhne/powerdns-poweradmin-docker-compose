@@ -28,7 +28,7 @@ Customize the recursor.conf file to suit your zone configuration, ensuring not t
 You can find the configuration file here:
 [recursor.conf](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/recursor/recursor.conf).
 
-Also, **replace 'scure-db-pass' in both the docker-compose.yml and pdns.conf files**. This is the password used to connect Poweradmin to MySQL.
+Also, **replace 'scure-db-pass'** in both the [docker-compose.yml](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/docker-compose.yml) and [pdns.conf](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/auth/pdns.conf) files. This is the password used to connect Poweradmin to MySQL.
 
 Once everything is configured, use Docker Compose to bring up the services. The `-d` flag runs the containers in the background.
 ```
@@ -51,6 +51,6 @@ After completing the setup wizard:
 
 ```
 docker exec -i pdns-mysql mysql -u root -p < /path/to/powerdns-schema.sql
-```Finally, to secure PowerDNS, I recommend allowing only TCP/UDP port 53 to the node and restricting access to TCP ports 80/443 to authorized devices only. Additionally, I suggest using a separate SQL user with full access to the PowerDNS database in the pdns.conf file.
+```
 
 Finally, to secure PowerDNS, I recommend allowing only TCP/UDP port 53 to the node and restricting access to TCP ports 80/443 to authorized devices only. Additionally, I suggest using a separate SQL user with full access to the PowerDNS database in the pdns.conf file.
