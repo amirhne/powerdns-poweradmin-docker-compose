@@ -13,15 +13,14 @@ A custom Dockerfile was created specifically for the PowerAdmin instance. This [
 ## How to Run it?
 
 Start by cloning the repository that contains the Docker Compose configuration for PowerDNS and PowerAdmin.
-
-> git clone https://github.com/amirhne/powerdns-poweradmin-docker-compose.git
-
+```
+ git clone https://github.com/amirhne/powerdns-poweradmin-docker-compose.git
+```
 Next, create the necessary directory for **PowerAdmin** inside the cloned repository and clone the **PowerAdmin** repository into it.
-
-> mkdir powerdns-poweradmin-docker-compose/poweradmin/www
->
-> git clone https://github.com/poweradmin/poweradmin.git powerdns-poweradmin-docker-compose/poweradmin/www
-
+```
+mkdir powerdns-poweradmin-docker-compose/poweradmin/www
+git clone https://github.com/poweradmin/poweradmin.git powerdns-poweradmin-docker-compose/poweradmin/www
+```
 If you have your own **SSL certificate** for the PowerAdmin interface, place it in the `ssl` directory inside `powerdns-poweradmin-docker-compose/poweradmin/ssl`
 
 Now, customize the `recursor.conf` file to suit your zone configuration. However, **do not change the IP address** `172.28.0.4` as it is required for forwarding request to master zone of PowerDNS.
