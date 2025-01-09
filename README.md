@@ -23,17 +23,15 @@ git clone https://github.com/poweradmin/poweradmin.git powerdns-poweradmin-docke
 ```
 If you have your own **SSL certificate** for the PowerAdmin interface, place public and private key with the same name in the `ssl` directory inside `powerdns-poweradmin-docker-compose/poweradmin/ssl`
 
-Now, customize the `recursor.conf` file to suit your zone configuration. However, **do not change the IP address** `172.28.0.4` for master zones in Authoritative Server as it is required for forwarding request to master zone of PowerDNS.
+Customize the recursor.conf file to suit your zone configuration, ensuring not to change the IP address 172.28.0.4 for the PowerDNS Authoritative Server (used for forwarding requests), but replace the IPs for other master zones handled by external DNS servers like Windows Server DNS or BIND with their respective addresses.
 
 You can find the configuration file here:
 [recursor.conf](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/recursor/recursor.conf).
 
-the Docker networkEdit the configuration to reflect your **desired zone** settings, and put you Windows Server DNS or BIND.
-
 Once everything is configured, use Docker Compose to bring up the services. The `-d` flag runs the containers in the background.
-
-> docker compose up -d
-
+```
+docker compose up -d
+```
 After the containers start, you can access **PowerAdmin** via the following URLs:
 
 - **HTTP**: http://127.0.0.1
