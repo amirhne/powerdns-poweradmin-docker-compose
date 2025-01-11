@@ -12,6 +12,8 @@ The project involves four container instances, which include PowerDNS Recursor, 
 
 A custom Dockerfile was created specifically for the PowerAdmin instance. This [Poweradmin](https://github.com/poweradmin/poweradmin) must be cloned into the `www` folder of the project directory to ensure proper configuration and functionality.
 
+![Scenario](https://github.com/amirhne/powerdns-poweradmin-docker-compose/blob/main/powerdns-poweradmin-docker-compose.png)
+
 ## How to Run it?
 
 Start by cloning the repository that contains the Docker Compose configuration for PowerDNS and PowerAdmin.
